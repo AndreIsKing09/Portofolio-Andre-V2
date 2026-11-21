@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0a0a12;
+  color: #eaeaea;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blob gradient di background */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.blob1 {
+  width: 400px;
+  height: 400px;
+  background: #4f9dff;
+  top: -100px;
+  left: -100px;
+}
+
+.blob2 {
+  width: 350px;
+  height: 350px;
+  background: #a855f7;
+  bottom: -100px;
+  right: -100px;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+/* Card glassmorphism */
+.container {
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 45px 30px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Foto profil dengan ring gradient */
+.foto {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+  margin-bottom: 22px;
+  padding: 4px;
+  background: linear-gradient(135deg, #4f9dff, #a855f7);
+  animation: fadeUp 0.8s ease 0.1s backwards;
+}
+
+h1 {
+  font-size: 1.9rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #ffffff, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeUp 0.8s ease 0.2s backwards;
+}
+
+.subtitle {
+  color: #4f9dff;
+  font-size: 0.95rem;
+  margin-bottom: 22px;
+  font-weight: 500;
+  animation: fadeUp 0.8s ease 0.3s backwards;
+}
+
+.desc {
+  color: #b0b0b0;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+  text-align: left;
+  text-align: justify;
+  animation: fadeUp 0.8s ease 0.4s backwards;
+}
+
+.footer {
+  color: #b0b0b0;
+  line-height: 1.8;
+  margin-top: 35px;
+  font-size: 0.95rem;
+  animation:  fadeUp 0.8s eae 0.4s backwards;
+}
+
+.list-minat {
+  text-align: left; /* <--- INI KUNCINYA, biar ga ketengah */
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  padding-left: 25px; 
+  animation: fadeUp 0.8s ease 0.5s backwards; 
+}
+
+.list-minat li {
+  list-style-type: disc;
+  margin-bottom: 8px;
+}
+
+.list-minat li::marker {
+  color: #4f9dff; 
+}
+
+/* Galeri */
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+  animation: fadeUp 0.8s ease 0.5s backwards;
+}
+
+.galeri img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.galeri img:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(79, 157, 255, 0.35);
+  border-color: rgba(79, 157, 255, 0.5);
+}
+
+/* Tombol link */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.6s backwards;
+}
+
+/* Centang biru*/
+.centang {
+  background-color: #0095f6;
+  color: white;
+  width: 20px;
+  height: 20px;
+  min-width: 20px; /* ini kuncinya biar nggak gepeng */
+  font-size: 13px;
+  line-height: 1;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.links a {
+  color: #eaeaea;
+  text-decoration: none;
+  padding: 11px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.links a:hover {
+  background: linear-gradient(135deg, #4f9dff, #a855f7);
+  border-color: transparent;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 157, 255, 0.4);
+}
+
+/* Responsive buat HP */
+@media (max-width: 480px) {
+  .container { padding: 35px 22px; }
+  h1 { font-size: 1.6rem; }
+  .galeri img { height: 110px; }
+  .bg-blob { width: 250px; height: 250px; }
+}
+
+/* PAKSA TAMPILAN DI HP */
+@media (max-width: 600px) {
+  .galeri img.potret {
+    height: auto !important; /* Biar tinggi nyesuaiin fotonya */
+    aspect-ratio: 4 / 5 !important; /* Paksa bentuk potret yang bener (4:5) */
+  }
+  
+  .galeri img {
+    height: auto !important;
+    aspect-ratio: 1 / 1 !important; /* Foto biasa paksa jadi kotak pas */
+  }
+}
